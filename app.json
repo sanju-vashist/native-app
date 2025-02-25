@@ -17,6 +17,9 @@
         "backgroundColor": "#ffffff"
       }
     },
+
+    "jsEngine": "hermes",
+    
     "web": {
       "bundler": "metro",
       "output": "static",

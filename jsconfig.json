@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "checkJs": true, // Optional: Enable type checking for JavaScript files
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react-native"
+  },
+  "include": ["**/*.js", "**/*.jsx", "app/_layout.jsx"],
+  "exclude": ["node_modules", "expo-env.d.ts"]
+}

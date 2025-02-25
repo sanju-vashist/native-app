@@ -1,17 +1,12 @@
 {
+  "compilerOptions": {},
   "extends": "expo/tsconfig.base",
-  "compilerOptions": {
-    "strict": true,
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
-  },
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "**/*.jsx",
+    "**/*.js",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "app/src/components/ui/ThemedView.jsx", "app/src/components/ui/ThemedText.jsx", "app/src/components/x_layout.jsx", "app/src/constants/Colors.js"  ]
 }
