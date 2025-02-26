@@ -10,3 +10,5 @@ export const Colors = {
     tint: '#0a84ff',
   },
 };
+
+export default Colors;

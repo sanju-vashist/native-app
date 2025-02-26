@@ -1,11 +1,10 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
-// import { useThemeColor } from '@/hooks/useThemeColor';
 import { useThemeColor } from '../../hooks/useThemeColor';
 
 export function ThemedText(props) {
   const { style, lightColor, darkColor, type = 'default', ...rest } = props;
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
+  const color = useThemeColor({ light: lightColor, dark: darkColor });
 
   return (
     <Text
@@ -48,3 +47,5 @@ const styles = StyleSheet.create({
     color: '#0a7ea4',
   },
 });
+
+export default ThemedText;

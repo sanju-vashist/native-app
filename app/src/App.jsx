@@ -14,18 +14,22 @@ const Stack = createStackNavigator();
 
 export default function App() {
   const [showNamePrompt, setShowNamePrompt] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const checkName = async () => {
       const name = await AsyncStorage.getItem('userAlias');
       if (!name) setShowNamePrompt(true);
+      setLoading(false);
     };
     checkName();
   }, []);
 
+  if (loading) return null; // Prevent rendering before AsyncStorage check
+
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
         <Stack.Screen name="Verification" component={VerificationScreen} />
@@ -35,6 +39,7 @@ export default function App() {
 
       {showNamePrompt && (
         <NamePromptModal
+          visible={showNamePrompt}
           onSave={async (name) => {
             await AsyncStorage.setItem('userAlias', name);
             setShowNamePrompt(false);

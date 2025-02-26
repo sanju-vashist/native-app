@@ -1,15 +1,14 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform, useColorScheme } from 'react-native'; 
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../constants/Colors';
+import { HapticPressable } from '../components/HapticTab';
 import { useThemeColor } from '../hooks/useThemeColor';
-import { HapticTab } from '../components/HapticTab';
-import { IconSymbol } from '../components/IconSymbol';
-
+import { IconSymbol } from '../components/IconSymbols';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const colorScheme = useColorScheme(); 
 
   return (
     <Tabs
@@ -26,7 +25,6 @@ export default function TabLayout() {
         },
       }}
     >
-      {/* Home Screen */}
       <Tabs.Screen
         name="index"
         options={{
@@ -36,8 +34,6 @@ export default function TabLayout() {
           ),
         }}
       />
-
-      {/* Chat Rooms */}
       <Tabs.Screen
         name="rooms"
         options={{
@@ -47,8 +43,6 @@ export default function TabLayout() {
           ),
         }}
       />
-
-      {/* Profile */}
       <Tabs.Screen
         name="profile"
         options={{
